@@ -1,0 +1,93 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="I2C" target="8" version="2">
+  <project Name="I2C">
+    <configuration
+      Name="Common"
+      arm_architecture="v7M"
+      arm_core_type="Cortex-M3"
+      arm_endian="Little"
+      arm_fp_abi="Soft"
+      arm_fpu_type="None"
+      arm_simulator_memory_simulation_parameter="RX 08000000,00010000,FFFFFFFF;RWX 20000000,00005000,CDCDCDCD"
+      arm_target_device_name="STM32F103C8"
+      arm_target_interface_type="SWD"
+      debug_start_from_entry_point_symbol="No"
+      debug_target_connection="J-Link"
+      linker_section_placements_segments="FLASH RX 0x08000000 0x00010000;RAM RWX 0x20000000 0x00005000"
+      project_directory=""
+      project_type="Executable" />
+    <configuration
+      Name="Internal"
+      arm_linker_variant="SEGGER"
+      build_intermediate_directory="Output/$(ProjectName) $(Configuration)/Obj"
+      build_output_directory="Output/$(Configuration)/Exe"
+      build_output_file_name="$(OutDir)/$(ProjectName)$(EXE)"
+      link_linker_script_file="$(StudioDir)/samples/SEGGER_Flash.icf" />
+    <configuration
+      Name="External Keil ARMCC"
+      project_type="Externally Built Executable" />
+    <folder Name="Internal Files">
+      <configuration Name="Common" build_exclude_from_build="Yes" />
+      <configuration Name="Internal" build_exclude_from_build="No" />
+      <file file_name="$(StudioDir)/samples/Cortex_M_Startup.s" />
+      <file file_name="$(StudioDir)/samples/SEGGER_THUMB_Startup.s" />
+    </folder>
+    <configuration
+      Name="hard_I2C External"
+      armcc_cl_cpu="Cortex-M3"
+      armcc_cl_enable_debug_info="Yes"
+      armcc_cl_optimization_level="None"
+      asm_additional_options="--pd;&quot;__MICROLIB SETA 1&quot;"
+      asm_additional_options_backup="--cpu;Cortex-M3;--pd;&quot;__MICROLIB SETA 1&quot;"
+      build_intermediate_directory="./Objects"
+      build_output_directory="./Objects"
+      build_output_file_name="./Objects/I2C.axf"
+      c_additional_options="-D__MICROLIB;--C99;--split_sections"
+      c_additional_options_backup="--cpu;Cortex-M3;-D__MICROLIB;--C99;-O0;--split_sections;-g"
+      link_additional_options_backup="--cpu;Cortex-M3;--ro_base=0x08000000;--rw_base=0x20000000;--first=__Vectors;--library_type=microlib"
+      linker_additional_options="--ro_base=0x08000000;--rw_base=0x20000000;--first=__Vectors;--library_type=microlib" />
+    <configuration
+      CMSIS_CORE="Yes"
+      Name="hard_I2C"
+      c_preprocessor_definitions="STM32F10X_MD;USE_STDPERIPH_DRIVER"
+      c_user_include_directories="./CMSIS/cm3;./CMSIS/system;./USER;./FWLIB/inc;./Device/inc" />
+    <folder Name="FWLIB">
+      <file file_name="./FWLIB/src/stm32f10x_dbgmcu.c" />
+      <file file_name="./FWLIB/src/stm32f10x_dma.c" />
+      <file file_name="./FWLIB/src/stm32f10x_exti.c" />
+      <file file_name="./FWLIB/src/stm32f10x_flash.c" />
+      <file file_name="./FWLIB/src/stm32f10x_i2c.c" />
+      <file file_name="./FWLIB/src/stm32f10x_gpio.c" />
+      <file file_name="./FWLIB/src/stm32f10x_rcc.c" />
+      <file file_name="./FWLIB/src/stm32f10x_usart.c" />
+      <file file_name="./FWLIB/src/misc.c" />
+    </folder>
+    <folder Name="USER">
+      <file file_name="./USER/main.c" />
+    </folder>
+    <folder Name="Device">
+      <file file_name="./Device/src/usart.c" />
+      <file file_name="./Device/src/i2c.c" />
+    </folder>
+    <folder Name="CMSIS">
+      <file file_name="./CMSIS/cm3/core_cm3.c" />
+      <file file_name="./CMSIS/startup/startup_stm32f10x_md.s">
+        <configuration Name="Internal" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="./CMSIS/system/system_stm32f10x.c" />
+    </folder>
+  </project>
+  <configuration
+    Name="External Keil ARMCC"
+    build_generic_options_file_name="$(StudioDir)/targets/ARMCC_build_options.xml"
+    hidden="Yes"
+    macros="KEIL_TOOLKIT_DIR=D:/Keil/ARM" />
+  <configuration Name="Internal" hidden="Yes" />
+  <configuration
+    Name="hard_I2C External"
+    inherited_configurations="External Keil ARMCC;hard_I2C" />
+  <configuration
+    Name="hard_I2C Internal"
+    inherited_configurations="Internal;hard_I2C" />
+  <configuration Name="hard_I2C" hidden="Yes" />
+</solution>

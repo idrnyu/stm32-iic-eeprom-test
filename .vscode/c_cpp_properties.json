@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/FWLIB/inc",
+                "${workspaceFolder}/CMSIS/cm3",
+                "${workspaceFolder}/CMSIS/startup",
+                "${workspaceFolder}/CMSIS/system",
+                "${workspaceFolder}/Device/inc",
+                "${workspaceFolder}/USER",
+                "D:/Keil/ARM/ARMCC/include"
+            ],
+            "defines": [
+                "STM32F10X_MD",
+                "USE_STDPERIPH_DRIVER"
+            ],
+            "windowsSdkVersion": "8.1",
+            "cStandard": "c99",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
