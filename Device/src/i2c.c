@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 u16 timeout = 1000;
+u8 i2cAddressl = 0xA0;  // 0xA0 24c02eeprom  0xA2  PCF8563
 
 /*i2c 初始化 */
 void I2C1_Init(void)
@@ -37,7 +38,7 @@ void I2C_EE_WaitEepromStandbyState(void)
   {
     I2C_GenerateSTART(I2C1, ENABLE);
     while (I2C_GetFlagStatus(I2C1, I2C_FLAG_SB) == ERROR); //检测EV5事件
-		I2C_Send7bitAddress(I2C1,0xA1,I2C_Direction_Transmitter);
+		I2C_Send7bitAddress(I2C1, i2cAddressl+0x01, I2C_Direction_Transmitter);
   } while (I2C_GetFlagStatus(I2C1, I2C_FLAG_ADDR) == ERROR);
   I2C_ClearFlag(I2C1, I2C_FLAG_AF); //清楚标志位
   I2C_GenerateSTOP(I2C1, ENABLE);   //结束信号
@@ -55,7 +56,7 @@ void I2C_WriteByte(u8 addr, u8 data)
   }
   timeout = 1000;
 
-  I2C_Send7bitAddress(I2C1, 0xA0, I2C_Direction_Transmitter);               //发送7位EEPROM的硬件地址
+  I2C_Send7bitAddress(I2C1, i2cAddressl, I2C_Direction_Transmitter);               //发送7位EEPROM的硬件地址
   while (!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED)) //检测EV6事件
   {
     if ((timeout--) == 0)
@@ -96,7 +97,7 @@ u8 I2C_ReadByte(u8 addr)
   }
   timeout = 1000;
 
-  I2C_Send7bitAddress(I2C1, 0xA1, I2C_Direction_Transmitter);
+  I2C_Send7bitAddress(I2C1, i2cAddressl+0x01, I2C_Direction_Transmitter);
   while (!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED)) //6
   {
     if ((timeout--) == 0)
@@ -120,7 +121,7 @@ u8 I2C_ReadByte(u8 addr)
   }
   timeout = 1000;
 
-  I2C_Send7bitAddress(I2C1, 0xA0, I2C_Direction_Receiver);
+  I2C_Send7bitAddress(I2C1, i2cAddressl, I2C_Direction_Receiver);
   while (!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED))
   {
     if ((timeout--) == 0)

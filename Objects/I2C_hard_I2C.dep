@@ -260,7 +260,7 @@ I (.\FWLIB\inc\stm32f10x_spi.h)(0x4D783BB4)
 I (.\FWLIB\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (.\FWLIB\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (.\FWLIB\inc\stm32f10x_wwdg.h)(0x4D783BB4)
-F (.\USER\main.c)(0x5DB3FBD2)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS\cm3 -I .\CMSIS\system -I .\USER -I .\FWLIB\inc -I .\Device\inc-I.\RTE\_hard_I2C-ID:\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\USER\main.c)(0x5DB42A6C)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS\cm3 -I .\CMSIS\system -I .\USER -I .\FWLIB\inc -I .\Device\inc-I.\RTE\_hard_I2C-ID:\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\CMSIS\system\stm32f10x.h)(0x4D783CB4)
 I (.\CMSIS\cm3\core_cm3.h)(0x4D523B58)
 I (D:\Keil\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
@@ -323,7 +323,7 @@ I (.\FWLIB\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (.\FWLIB\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\FWLIB\inc\misc.h)(0x4D783BB4)
 I (D:\Keil\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-F (.\Device\src\i2c.c)(0x5D478BB5)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS\cm3 -I .\CMSIS\system -I .\USER -I .\FWLIB\inc -I .\Device\inc-I.\RTE\_hard_I2C-ID:\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
+F (.\Device\src\i2c.c)(0x5DB4299E)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS\cm3 -I .\CMSIS\system -I .\USER -I .\FWLIB\inc -I .\Device\inc-I.\RTE\_hard_I2C-ID:\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
 I (.\Device\inc\i2c.h)(0x5D46CB2B)
 I (.\CMSIS\system\stm32f10x.h)(0x4D783CB4)
 I (.\CMSIS\cm3\core_cm3.h)(0x4D523B58)
